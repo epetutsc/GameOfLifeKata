@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace StringCalculatorKata.Tests
+namespace GameOfLife.Tests
 {
 
     public class ReadableFactAttribute : Xunit.FactAttribute
