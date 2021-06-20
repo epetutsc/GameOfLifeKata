@@ -1,4 +1,6 @@
-﻿namespace GameOfLife.Tests
+﻿using Shouldly;
+
+namespace GameOfLife.Tests
 {
     public class CellTests
     {
