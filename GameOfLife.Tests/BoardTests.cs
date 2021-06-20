@@ -43,5 +43,16 @@ namespace GameOfLife.Tests
             }
         }
 
+        [ReadableFact]
+        public void Any_alive_cell_with_no_alive_neighbours_dies()
+        {
+            var board = new Board(width: 3, height: 3);
+            var cell = board.Cells[2, 2];
+            cell.SetAlive();
+
+            board.NextGeneration();
+
+            cell.IsDead.ShouldBeTrue();
+        }
     }
 }
