@@ -27,5 +27,21 @@ namespace GameOfLife.Tests
                 }
             }
         }
+
+        [ReadableFact]
+        public void All_cells_can_be_alive()
+        {
+            var board = new Board(width: 200, height: 200);
+
+            for (var i = 0; i < board.Cells.GetLength(0); i++)
+            {
+                for (var j = 0; j < board.Cells.GetLength(1); j++)
+                {
+                    board.Cells[i, j].SetAlive();
+                    board.Cells[i, j].IsDead.ShouldBeFalse();
+                }
+            }
+        }
+
     }
 }
