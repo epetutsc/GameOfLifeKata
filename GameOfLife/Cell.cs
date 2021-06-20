@@ -1,4 +1,4 @@
-﻿namespace GameOfLife.Tests
+﻿namespace GameOfLife
 {
     public class Cell
     {
