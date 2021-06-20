@@ -54,5 +54,19 @@ namespace GameOfLife.Tests
 
             cell.IsDead.ShouldBeTrue();
         }
+
+        [ReadableFact]
+        public void Any_alive_cell_with_fewer_than_two_alive_neighbours_dies_as_if_caused_by_underpopulation()
+        {
+            var board = new Board(width: 2, height: 2);
+            var cell = board.Cells[0, 0];
+
+            board.Cells[0, 0].SetAlive();
+            board.Cells[0, 1].SetAlive();
+
+            board.NextGeneration();
+
+            cell.IsDead.ShouldBeTrue();
+        }
     }
 }

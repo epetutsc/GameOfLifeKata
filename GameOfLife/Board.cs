@@ -45,16 +45,6 @@ namespace GameOfLife
 
         private Cell[] GetNeighbours(int row, int col)
         {
-            if (row == 0)
-            {
-                return Array.Empty<Cell>();
-            }
-
-            var cells = new[] { col - 1, col, col + 1 }
-                .Where(col => col >= 0 && col < Columns)
-                .Select(col => Cells[row - 1, col])
-                .ToArray();
-
             var qry =
                 from r in new[] { row - 1, row, row + 1 }
                 from c in new[] { col - 1, col, col + 1 }
