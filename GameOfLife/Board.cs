@@ -35,7 +35,7 @@ namespace GameOfLife
                 {
                     var cell = Cells[row, col];
                     var neighbours = GetNeighbours(row, col);
-                    if (!neighbours.Any(n => n.IsAlive))
+                    if (neighbours.Count(n => n.IsAlive) < 2)
                     {
                         cell.Kill();
                     }
