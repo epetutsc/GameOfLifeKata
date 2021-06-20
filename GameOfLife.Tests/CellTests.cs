@@ -4,19 +4,20 @@ namespace GameOfLife.Tests
 {
     public class CellTests
     {
+        private readonly Cell _sut = new();
+
         [ReadableFact]
         public void A_cell_can_be_dead()
         {
-            var cell = new Cell();
-            cell.IsDead.ShouldBe(true);
+            _sut.IsDead.ShouldBe(true);
         }
 
         [ReadableFact]
         public void A_cell_can_be_alive()
         {
-            var cell = new Cell();
-            cell.SetAlive();
-            cell.IsDead.ShouldBe(false);
+            _sut.SetAlive();
+
+            _sut.IsDead.ShouldBe(false);
         }
     }
 }
