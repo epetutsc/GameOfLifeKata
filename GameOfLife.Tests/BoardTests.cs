@@ -1,4 +1,5 @@
-﻿using Shouldly;
+﻿using System;
+using Shouldly;
 
 namespace GameOfLife.Tests
 {
@@ -11,6 +12,20 @@ namespace GameOfLife.Tests
 
             board.Cells[0, 0].ShouldNotBeNull();
             board.Cells[199, 199].ShouldNotBeNull();
+        }
+
+        [ReadableFact]
+        public void Initial_all_cells_are_dead()
+        {
+            var board = new Board(width: 200, height: 200);
+
+            for (var i = 0; i < board.Cells.GetLength(0); i++)
+            {
+                for (var j = 0; j < board.Cells.GetLength(1); j++)
+                {
+                    board.Cells[i, j].IsDead.ShouldBeTrue();
+                }
+            }
         }
     }
 }
